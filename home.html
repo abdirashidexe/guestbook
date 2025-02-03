@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio: Guestbook</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/icons8-sign-50.png">
+</head>
+<body>
+    <h1>Sign my guestbook!</h1>
+    <form action="/thankyou" method="post">
+        <fieldset>
+            <label>First Name
+                <input type="text" name="fname">
+            </label>
+
+            <label>Last Name
+                <input type="text" name="lname">
+            </label>
+
+            <label>Job Title
+                <input type="text" name="job">
+            </label>
+
+            <label>Company
+                <input type="text" name="company">
+            </label>
+
+            <label>LinkedIn URL
+                <input type="text" name="linkedin">
+            </label>
+
+            <label>Email Address
+                <input type="text" name="email">
+            </label>
+
+            <label>How did we meet?
+                <select name="howwemet">
+                    <option value="School">School</option>
+                </select>
+            </label>
+
+            <label>Other (please specify)
+                <input type="text" name="other">
+            </label>
+
+            <label>Message
+                <input type="text" name="message">
+            </label>
+
+            <label>
+                <input type="checkbox" name="mailinglist">
+                Please add me to your mailing list
+            </label>
+
+            <label>Choose an email format:
+                <input type="radio" name="htmlradio">
+                HTML
+                <input type="radio" name="textradio">
+                Text
+            </label>
+        </fieldset>
+    </form>
+</body>
+<footer>
+    <a target="_blank" href="https://icons8.com/icon/8190/sign-up">Sign</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+</footer>
+</html>
