@@ -8,66 +8,74 @@
     <link rel="icon" type="image/x-icon" href="/images/icons8-sign-50.png">
 </head>
 <body>
-    <h1>Sign my guestbook!</h1>
+    <h1>My Guestbook Form</h1>
     <form action="/thankyou" method="post">
         <fieldset>
-            <label>First Name
-                <input type="text" name="fname">
-            </label>
+            <div id="top">
+                <label>First Name
+                    <input type="text" name="fname">
+                </label>
 
-            <label>Last Name
-                <input type="text" name="lname">
-            </label>
+                <label>Last Name
+                    <input type="text" name="lname">
+                </label>
 
-            <label>Job Title
-                <input type="text" name="job">
-            </label>
+                <label>Job Title
+                    <input type="text" name="job">
+                </label>
 
-            <label>Company
-                <input type="text" name="company">
-            </label>
+                <label>Company
+                    <input type="text" name="company">
+                </label>
 
-            <label>LinkedIn URL
-                <input type="text" name="linkedin">
-            </label>
+                <label>LinkedIn URL
+                    <input type="text" name="linkedin">
+                </label>
 
-            <label>Email Address
-                <input type="text" name="email">
-            </label>
+                <label>Email Address
+                    <input type="text" name="email">
+                </label>
+            </div>
 
-            <label>How did we meet?
-                <select name="howwemet">
-                    <option value="School">Classroom</option>
-                    <option value="School">Job Fair</option>
-                    <option value="School">Meetup</option>
-                </select>
-            </label>
+            <div id="mid">
+                <label>How did we meet?
+                    <select name="howwemet">
+                        <option value="School">Classroom</option>
+                        <option value="School">Job Fair</option>
+                        <option value="School">Meetup</option>
+                    </select>
+                </label>
 
-            <label>Other (please specify)
-                <input type="text" name="other">
-            </label>
+                <label>Other (please specify)
+                    <input type="text" name="other">
+                </label>
+            </div>
 
-            <label>Message
-                <input type="text" name="message">
-            </label>
+            <div id="bottom">
+                <label>Message
+                    <input type="text" name="message">
+                </label>
 
-            <label>
-                <input type="checkbox" name="mailinglist">
-                Please add me to your mailing list
-            </label>
+                <label>Please add me to your mailing list
+                    <input type="checkbox" name="mailinglist">
+                    
+                </label>
 
-            <label>Choose an email format:
-                <input type="radio" name="htmlradio">
-                HTML
-                <input type="radio" name="textradio">
-                Text
-            </label>
+                <label>Choose an email format:
+                    <input type="radio" name="htmlradio">
+                    HTML
+                    <input type="radio" name="textradio">
+                    Text
+                </label>
+            </div>
         </fieldset>
 
         <button type="submit">Submit</button>
     </form>
 </body>
 <footer>
+    <br>
+    <br>
     <a target="_blank" href="https://icons8.com/icon/8190/sign-up">Sign</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 </footer>
 </html>

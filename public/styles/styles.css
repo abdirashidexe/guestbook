@@ -1,4 +1,48 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h1
 {
     color:darkgreen;
+    text-align: center;
+}
+
+/*#top
+{
+    width:33%;
+    border:solid 2px red;
+}
+
+#mid
+{
+    width:50%;
+    border:solid 2px blue;
+}
+
+#bottom
+{
+    width:100%;
+    border:solid 2px green;
+}*/
+
+input, select
+{
+    box-sizing: border-box;
+    margin: 2px;
+    width:100%;
+}
+
+button
+{
+    padding:10px;
+    margin:2px;
+    color: white;
+    background-color: green;
+}
+
+footer
+{
+    font-size:8px;
 }
