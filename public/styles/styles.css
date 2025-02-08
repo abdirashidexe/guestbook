@@ -30,19 +30,16 @@ button
 
 label
 {
-    display: flex;
-    flex-direction: column;
+    display: block;
     font-weight: bold;
-    border: solid 2px orange;
-    margin:20px;
-    width:30%;
 }
 
-fieldset /* all good */
+fieldset
 {
-    display:block;
+    display:flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    gap:10px;
     border-radius: 5px;
     border: 0;
     box-shadow: 0 0 5px rgb(218, 218, 218);
@@ -57,13 +54,17 @@ input
     border: 0;
     box-shadow: 0 0 2px rgb(196, 196, 196);
     border: solid 2px green;
+    width:100%;
+    height:2em;
 }
 
-#top
+.top-group
 {
-    
+    display:flex;
+    flex-direction: column;
+    width:30%;
+    padding:10px;
     border: solid 2px red;
-    /* width: 50%;*/
 }
 
 

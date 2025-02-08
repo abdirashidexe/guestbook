@@ -9,47 +9,48 @@
 </head>
 <body>
     <form action="/thankyou" method="post">
+        <h1>My Guestbook Form</h1>
         <fieldset>
-            <div id="headingtitle">
-                <h1>My Guestbook Form</h1>
-            </div>
-            
-            <div id="top">
+            <div class="top-group">
                 <label>
                     First Name
                     <input type="text" name="fname">
                 </label>
+            </div>
                 
-
+            <div class="top-group">
                 <label>
                     Last Name
                     <input type="text" name="lname">
                 </label>
-                
+            </div>
 
+            <div class="top-group">
                 <label>
                     Job Title
                     <input type="text" name="job">
                 </label>
+            </div>
                 
-
+            <div class="top-group">
                 <label>
                     Company
                     <input type="text" name="company">
                 </label>
-                
+            </div>
 
+            <div class="top-group">
                 <label>
                     LinkedIn URL
                     <input type="text" name="linkedin">
                 </label>
-                
+            </div>
 
+            <div class="top-group">
                 <label>
                     Email Address
                     <input type="text" name="email">
                 </label>
-                
             </div>
 
            <!--
@@ -86,8 +87,8 @@
                 <input type="radio" name="textradio">Text
             </label>
         -->
-        <button type="submit">Submit</button>
         </fieldset>
+        <button type="submit">Submit</button>
     </form>
     <footer>
         <br>
