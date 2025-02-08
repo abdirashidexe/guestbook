@@ -10,36 +10,52 @@
 <body>
     <form action="/thankyou" method="post">
         <fieldset>
-            <h1>My Guestbook Form</h1>
+            <div id="headingtitle">
+                <h1>My Guestbook Form</h1>
+            </div>
+            
             <div id="top">
-                <label>First Name
+                <label>
+                    First Name
                     <input type="text" name="fname">
                 </label>
+                
 
-                <label>Last Name
+                <label>
+                    Last Name
                     <input type="text" name="lname">
                 </label>
+                
 
-                <label>Job Title
+                <label>
+                    Job Title
                     <input type="text" name="job">
                 </label>
+                
 
-                <label>Company
+                <label>
+                    Company
                     <input type="text" name="company">
                 </label>
+                
 
-                <label>LinkedIn URL
+                <label>
+                    LinkedIn URL
                     <input type="text" name="linkedin">
                 </label>
+                
 
-                <label>Email Address
+                <label>
+                    Email Address
                     <input type="text" name="email">
                 </label>
+                
             </div>
 
-            <!--
+           <!--
             <div id="mid">
-                <label>How did we meet?
+                <label>
+                    How did we meet?
                     <select name="howwemet">
                         <option value="School">Classroom</option>
                         <option value="School">Job Fair</option>
@@ -48,10 +64,10 @@
                 </label>
 
                 <label>Other (please specify)
-                    <input type="text" name="other">
+                    <input type="text" name="other" id="otherbox">
                 </label>
             </div>
-
+ 
             <label id="message">Message   
                 <input type="text" name="message">
             </label>

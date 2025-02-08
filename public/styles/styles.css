@@ -1,7 +1,7 @@
 body
 {
     font-family: Arial, Helvetica, sans-serif;
-    width: 70%;
+    width: 50%;
     margin: 0 auto 1rem auto;
     padding: 1rem 1rem 2rem 1rem;
     background-color: rgb(240, 240, 240);
@@ -10,6 +10,11 @@ body
 h1
 {
     text-align: center;
+}
+
+#headingtitle
+{
+    border: solid 2px purple;
 }
 
 button
@@ -23,22 +28,27 @@ button
     border:0;
 }
 
-footer
-{
-    font-size:8px;
-}
-
 label
 {
+    display: flex;
+    flex-direction: column;
     font-weight: bold;
+    border: solid 2px orange;
+    margin:20px;
+    width:30%;
 }
 
-fieldset
+fieldset /* all good */
 {
+    display:block;
+    flex-wrap: wrap;
+    justify-content: center;
     border-radius: 5px;
     border: 0;
     box-shadow: 0 0 5px rgb(218, 218, 218);
     background-color: white;
+    border: solid 2px blue;
+    
 }
 
 input
@@ -46,18 +56,27 @@ input
     border-radius: 2px;
     border: 0;
     box-shadow: 0 0 2px rgb(196, 196, 196);
-    height: 1.5em;
-}
-
-label
-{
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    border: solid 2px green;
 }
 
 #top
 {
-    display:flex;
-    justify-content: space-around;
+    
+    border: solid 2px red;
+    /* width: 50%;*/
 }
+
+
+/*
+
+select
+{
+    display:block;
+    border-radius: 2px;
+    border: 0;
+    box-shadow: 0 0 2px rgb(196, 196, 196);
+    height: 2.5em;
+    width:50%;
+    border: solid 2px green;
+}
+    */
