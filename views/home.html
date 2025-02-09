@@ -9,9 +9,12 @@
 </head>
 <body>
     <form action="/thankyou" method="post">
+        
         <fieldset>
-            <div id="top">
-                <label>First Name
+            <h1>My Guestbook Form</h1>
+            <div class="top-group">
+                <label>
+                    First Name
                     <input type="text" name="fname">
                 </label>
             </div>
@@ -51,40 +54,51 @@
                 </label>
             </div>
 
-            <div id="mid">
-                <label>How did we meet?
+           
+            <div class="mid-group">
+                <label>
+                    How did we meet?
                     <select name="howwemet">
                         <option value="School">Classroom</option>
                         <option value="School">Job Fair</option>
                         <option value="School">Meetup</option>
                     </select>
                 </label>
-
-                <label>Other (please specify)
-                    <input type="text" name="other">
+            </div>
+            <div class="mid-group">
+                <label>
+                    Other (please specify)
+                    <input type="text" name="other" id="otherbox">
                 </label>
             </div>
 
-            <label id="message">Message   
-                <input type="text" name="message">
-            </label>
+            <div class="message">
+                <label>
+                    Message   
+                    <input type="text" name="message">
+                </label>
+            </div>
+ 
+            <div class="mailing-group">
+                <label>
+                    <input type="checkbox" name="mailinglist" id="mailing">
+                    Please add me to your mailing list
+                </label>
+            </div>
 
-            <label id="mailing">Please add me to your mailing list
-                <input type="checkbox" name="mailinglist">
-                
-            </label>
-
-            <fieldset>Choose an email format:
-            <label class="emailformat">
-                <input type="radio" name="htmlradio">HTML
-            </label>
-            <label class="emailformat">
-                <input type="radio" name="textradio">Text
-            </label>
-            </fieldset>
+            <div class="emailformat">
+                <label class="emailformat">
+                    Choose an email format:
+                    <input type="radio" name="htmlradio" class="radios">HTML
+                </label>
+             
+                <label class="emailformat">
+                    <input type="radio" name="textradio" class="radios">Text
+                </label>
+            </div>
+            <button type="submit">Submit</button>
         </fieldset>
-
-        <button type="submit">Submit</button>
+        
     </form>
     <footer>
         <br>

@@ -1,27 +1,16 @@
 body
 {
     font-family: Arial, Helvetica, sans-serif;
-    margin-top:20px;
-    margin-left:400px;
-    margin-right: 400px;
-    margin-bottom:20px;
-}
-
-fieldset
-{
-    display:flex;
-    flex-direction: column;
+    width: 50%;
+    margin: 0 auto 1rem auto;
+    padding: 1rem 1rem 2rem 1rem;
+    background-color: rgb(240, 240, 240);
 }
 
 h1
 {
     text-align: center;
     width:100%;
-}
-
-#headingtitle
-{
-    border: solid 2px purple;
 }
 
 button
@@ -51,8 +40,6 @@ fieldset
     border: 0;
     box-shadow: 0 0 5px rgb(218, 218, 218);
     background-color: white;
-    border: solid 2px blue;
-    
 }
 
 input
@@ -60,7 +47,6 @@ input
     border-radius: 2px;
     border: 0;
     box-shadow: 0 0 2px rgb(196, 196, 196);
-    border: solid 2px green;
     width:100%;
     height:2em;
 }
@@ -71,20 +57,59 @@ input
     flex-direction: column;
     width:30%;
     padding:10px;
-    border: solid 2px red;
 }
 
-
-/*
+.mid-group
+{
+    display:flex;
+    flex-direction: column;
+    width:46%;
+    padding:10px;
+}
 
 select
 {
-    display:block;
     border-radius: 2px;
     border: 0;
     box-shadow: 0 0 2px rgb(196, 196, 196);
     height: 2.5em;
-    width:50%;
-    border: solid 2px green;
+    width:100%;
 }
-    */
+
+.message
+{
+    width:100%;
+}
+
+.message input
+{
+    height:5em;
+}
+
+#mailing
+{
+    width:5%;
+    height:5%;
+}
+
+.mailing-group
+{
+    width: 100%;
+}
+
+.mailing-group label
+{
+    display: flex;
+}
+
+.emailformat
+{
+    display:flex;
+    width:100%;
+}
+
+.radios
+{
+    width:40%;
+    height:40%;
+}
