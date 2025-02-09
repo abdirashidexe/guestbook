@@ -72,7 +72,7 @@ select
     border-radius: 2px;
     border: 0;
     box-shadow: 0 0 2px rgb(196, 196, 196);
-    height: 2.5em;
+    height: 2.2em;
     width:100%;
 }
 
@@ -88,8 +88,8 @@ select
 
 #mailing
 {
-    width:5%;
-    height:5%;
+    width:10px;
+    height:10px;
 }
 
 .mailing-group
@@ -110,6 +110,6 @@ select
 
 .radios
 {
-    width:40%;
-    height:40%;
+    width:10px;
+    height:10px;
 }
