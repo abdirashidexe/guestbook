@@ -17,6 +17,8 @@ app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 });
 
+const orders = [];
+
 app.post('/thankyou', (req, res) => {
 
     res.sendFile(`${import.meta.dirname}/views/thankyou.html`);
