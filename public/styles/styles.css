@@ -124,3 +124,9 @@ select
 {
     margin:50px;
 }
+
+#errorMsg
+{
+    color: rgb(143, 0, 0);
+    text-align: center;
+}

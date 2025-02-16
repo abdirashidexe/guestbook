@@ -29,11 +29,17 @@ app.post('/thankyou', (req, res) => {
 
 app.post('/submit-order', (req, res) => {
 
+    if (req.body.fname == "" || req.body.lname == "" || req.body.email == "")
+    {
+        res.sendFile(`${import.meta.dirname}/views/invalid-submission.html`);
+        return;
+    }
+
     // Get form data from req body
     const submission = {
         fname: req.body.fname,
         lname: req.body.lname,
-        job: req.body.email,
+        job: req.body.job,
         company: req.body.company,
         linkedin: req.body.linkedin,
         email: req.body.email,
@@ -47,7 +53,7 @@ app.post('/submit-order', (req, res) => {
     console.log(submissions);
 
     // Send confirmation page
-    res.sendFile(`${import.meta.dirname}/views/thankyou.html`)
+    res.sendFile(`${import.meta.dirname}/views/thankyou.html`);
 });
 
 app.get('/admin/orders', (req,res) => {
