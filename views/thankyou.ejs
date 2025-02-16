@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form submitted</title>
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/icons8-sign-50.png">
+</head>
+<body>
+    <h1>Form submitted. Thank you, <%= submission.fname %>!</h1>
+
+    <!-- Submission Details Below -->
+    <h2>Submission Details</h2>
+    <p><strong>Name:</strong> <%= submission.fname %> <%= submission.lname %></p>
+    <p><strong>Job:</strong> <%= submission.job %></p>
+    <p><strong>Company:</strong> <%= submission.company %></p>
+    <p><strong>LinkedIn:</strong> <%= submission.linkedin %></p>
+    <p><strong>Email:</strong> <%= submission.email %></p>
+    <p><strong>How We Met:</strong> <%= submission.met %></p>
+    <p><strong>Other:</strong> <%= submission.other %></p>
+    <p><strong>Message:</strong> <%= submission.message %></p>
+    <p><strong>Mailing List:</strong> <%= submission.mailinglist %></p>
+    <p><strong>Email Format:</strong> <%= submission.emailformat %></p>
+
+    <div class="backDiv">
+        <button id="backBtn">Back</button>
+    </div>
+    <footer>
+        <br>
+        <div class="adminLinkDiv">
+            <a id="adminLink">Admin Page</a>
+        </div>
+        <br>
+        <a target="_blank" href="https://icons8.com/icon/8190/sign-up">Sign</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </footer>
+</body>
+</html>

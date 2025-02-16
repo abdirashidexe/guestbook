@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form submitted</title>
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/icons8-sign-50.png">
+</head>
+<body>
+    <h1>Submissions Summary</h1>
+
+    <% if (submissions.length == 0) { %>
+        <p>No contacts to display.</p>
+    <% } else { %>
+        <% for (let i = 0; i < submissions.length; i++) { %>
+            <h3>Contact #<%= i+1 %></h3>
+            <p><strong>Name:</strong> <%= submissions[i].fname %> <%= submissions[i].lname %></p>
+            <p><strong>Job:</strong> <%= submissions[i].job %></p>
+            <p><strong>Company:</strong> <%= submissions[i].company %></p>
+            <p><strong>LinkedIn:</strong> <%= submissions[i].linkedin %></p>
+            <p><strong>Email:</strong> <%= submissions[i].email %></p>
+            <p><strong>Met via:</strong> <%= submissions[i].met %></p>
+            <p><strong>Other:</strong> <%= submissions[i].other %></p>
+            <p><strong>Message:</strong> <%= submissions[i].message %></p>
+            <p><strong>Mailing List:</strong> <%= submissions[i].mailinglist %></p>
+            <p><strong>Email Format:</strong> <%= submissions[i].emailformat %></p>
+            <p><strong>Submission Date & Time:</strong> <%= submissions[i].timestamp %></p>
+            <hr>
+        <% } %>
+    <% } %>
+
+    <div class="backDiv">
+        <button id="backBtn">Back</button>
+    </div>
+    <footer>
+        <br>
+        <div class="adminLinkDiv">
+            <a id="adminLink">Admin Page</a>
+        </div>
+        <br>
+        <a target="_blank" href="https://icons8.com/icon/8190/sign-up">Sign</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </footer>
+</body>
+</html>

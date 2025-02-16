@@ -1,6 +1,15 @@
 let button = document.getElementById("backBtn");
+let adminLink = document.getElementById("adminLink");
 
-button.onclick = function()
+if (button)
 {
-    window.location.href= '/';
+    button.onclick = function()
+    {
+        window.location.href= '/';
+    };
 }
+
+adminLink.onclick = function()
+{
+    window.location.href= '/admin';
+};
