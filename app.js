@@ -1,5 +1,31 @@
 import express from 'express';
+import mariadb from 'mariadb';
+import validateForm from './services/validation.js';
+import dotenv from 'dotenv';
 
+dotenv.config();
+
+// Define our database credentials
+const pool = mariadb.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+});
+
+// Define function to connect to the DB
+async function connect() {
+    try {
+        const conn = await pool.getConnection();
+        console.log('Connected to the database!!')
+        return conn;
+    } catch (err) {
+        console.log(`Error connecting to the database.. uh oh: ${err}`)
+    }
+}
+
+// Instantiate an Express application
 const app = express();
 
 app.use(express.static('public'));
@@ -8,7 +34,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
 
-const submissions = [];
+// Const submissions = [];
 
 const PORT = 3000;
 
@@ -17,21 +43,15 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-const orders = [];
+// Const orders = [];
 
-app.post('/thankyou', (req, res) => {
+app.post('/thankyou', async(req, res) => {
 
     res.render(`${import.meta.dirname}/views/thankyou.html`);
     console.log(req.body);
 });
 
-app.post('/submit-order', (req, res) => {
-
-    if (req.body.fname == "" || req.body.lname == "" || req.body.email == "")
-    {
-        res.render('invalid-submission');
-        return;
-    }
+app.post('/submit-order', async (req, res) => {
 
     // Get form data from req body
     const submission = {
@@ -48,18 +68,50 @@ app.post('/submit-order', (req, res) => {
         emailformat: req.body.emailformat,
         timestamp: new Date()
     };
+    console.log('Submission data: ', submission);
 
-    // Save submission to the array
-    submissions.push(submission);
+    const result = validateForm(submission);
+    if (!result.isValid) {
+        console.log(result.errors);
+        res.send(result.errors);
+        return;
+    }
+    
+    // Connect to the database
+    const conn = await connect();
 
-    // Log the submissions array to the console
-    console.log(submissions);
+    // Convert emailformat to a string 
+    if (submission.mailinglist)
+    {
+        if (Array.isArray(submission.mailinglist))
+        {
+            submission.mailinglist = submission.mailinglist.join(",");
+        }
+    } else {
+        submission.mailinglist = "";
+    }
+
+    
+    // Add the submission to our database
+    const insertQuery = await conn.query(`
+        INSERT INTO submissions
+        (fname, lname, job, company, linkedin, email, met, other, message, mailinglist, emailformat, time_stamp)
+        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [ submission.fname, submission.lname, submission.job, submission.company, submission.linkedin, submission.email, submission.met, submission.other, submission.message, submission.mailinglist, submission.emailformat, submission.timestamp]);
 
     // Send confirmation page
     res.render('thankyou', { submission });
 });
 
-app.get('/admin', (req,res) => {
+app.get('/admin', async (req,res) => {
+    // Connect to database
+    const conn = await connect();
+
+    // Query the databse
+    const submissions = await conn.query('SELECT * FROM submissions');
+
+    console.log(submissions);
+    
     res.render('submission-summary', { submissions });
 });
 
